@@ -6,74 +6,59 @@
     android:layout_height="match_parent"
     tools:context=".Teacher">
 
-    <EditText
-        android:id="@+id/editText1"
-        android:layout_width="0dp"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAdd"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        app:layout_constraintEnd_toStartOf="@+id/guideline2"
-        app:layout_constraintStart_toStartOf="@+id/guideline10"
-        app:layout_constraintTop_toTopOf="parent">
-
-    </EditText>
-
-
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        app:layout_constraintEnd_toStartOf="@+id/guideline2"
-        app:layout_constraintStart_toStartOf="@+id/guideline10"
-        app:layout_constraintTop_toBottomOf="@+id/editText1">
-
-    </EditText>
-
-    <EditText
-        android:id="@+id/editText3"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        app:layout_constraintEnd_toStartOf="@+id/guideline2"
-        app:layout_constraintStart_toStartOf="@+id/guideline10"
-        app:layout_constraintTop_toBottomOf="@+id/editText2">
-
-    </EditText>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_end="32dp" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline10"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="32dp" />
-
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        app:cornerRadius="80dp"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="16dp"
+        android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
+        android:src="@drawable/ic_baseline_add_24"
+        app:fabSize="mini"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:tint="#FFF"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/fabExit"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="16dp"
+        style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
         android:text="Exit"
-
+        android:textColor="#FFF"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline10" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:rippleColor="@color/black"
+        tools:ignore="SpeakableTextPresentCheck" />
+<!--    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton-->
+<!--        android:id="@+id/fab"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="56dp"-->
+<!--        android:text="Text"-->
+<!--        android:textColor="#02220D"-->
+<!--        android:backgroundTint="#F2C203"-->
+<!--        style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"-->
+<!--        android:textSize="15sp"-->
+<!--        android:fontFamily="sans-serif-medium"-->
+<!--        android:textStyle="normal"-->
+<!--        android:layout_marginBottom="16dp"-->
+<!--        android:layout_marginEnd="16dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:iconTint="#02220D"-->
+<!--        -->
+<!--        -->
+<!--        android:insetLeft="0dp"-->
+<!--        android:insetBottom="0dp"-->
+<!--        android:insetTop="0dp"-->
+<!--        android:insetRight="0dp"-->
+<!--        />-->
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        app:cornerRadius="80dp"
-        android:layout_marginBottom="32dp"
 
-        android:text="Add"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/guideline2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

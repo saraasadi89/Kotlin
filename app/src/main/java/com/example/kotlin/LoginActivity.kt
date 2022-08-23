@@ -9,7 +9,7 @@ import com.example.kotlin.databinding.ActivityLoginBinding
 class LoginActivity : AppCompatActivity() {
     private lateinit var bind: ActivityLoginBinding
     override fun onCreate(savedInstanceState: Bundle?) {
-        Log.d("Student","there is not")
+        Log.d("Student", "there is not")
         super.onCreate(savedInstanceState)
         bind = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(bind.root)
@@ -18,10 +18,11 @@ class LoginActivity : AppCompatActivity() {
         bind.textButton1.setOnClickListener {
             val username = bind.editText1.text.toString()
             val pass = bind.editText2.text.toString()
-            if (username == "Teacher" && pass == "123456")
+            if (username == "Teacher" && pass == "123456") {
 //                Toast.makeText(this, "yes", Toast.LENGTH_SHORT).show()
                 intent = Intent(applicationContext, Teacher::class.java)
-            startActivity(intent)
+                startActivity(intent)
+            }
         }
         bind.textButton2.setOnClickListener {
             val username = bind.editText1.text.toString()
