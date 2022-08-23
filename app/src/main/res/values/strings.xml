@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Test</string>
+    <drawable name="d1">@drawable/ic_twotone_person_outline_24</drawable>
+</resources>
