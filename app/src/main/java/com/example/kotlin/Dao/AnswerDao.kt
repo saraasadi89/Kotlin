@@ -1,8 +1,9 @@
-package com.example.kotlin.model
+package com.example.kotlin.Dao
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
+import com.example.kotlin.model.Answer
 
 @Dao
 interface AnswerDao {
@@ -10,7 +11,7 @@ interface AnswerDao {
     fun insert(answer: Answer)
 
     @Query("SELECT * FROM Answer WHERE id=:id")
-    fun getUserAnswers (id:Int):Answer
+    fun getUserAnswers (id:Int): Answer
 
 
 }

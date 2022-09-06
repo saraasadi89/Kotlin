@@ -12,8 +12,13 @@ class TeacherActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         bind = ActivityTeacherBinding.inflate(layoutInflater)
         setContentView(bind.root)
+        //TODO direkt login after regester
         bind.fabExit.setOnClickListener {
             finish()
+//            val intent = Intent(this, LoginActivity::class.java)
+//            startActivity(intent)
+
+
         }
         bind.fabAdd.setOnClickListener {
             intent = Intent(this,CreateActivity::class.java)

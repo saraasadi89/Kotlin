@@ -1,12 +1,13 @@
-package com.example.kotlin.model
+package com.example.kotlin.Dao
 
 import androidx.room.*
+import com.example.kotlin.model.Quiz
 
 @Dao
 interface QuizDao {
 
     @Insert
-    fun insert(quiz:Quiz)
+    fun insert(quiz: Quiz)
 
     @Query("SELECT * FROM Quiz")
     fun getAllQuiz():List<Quiz>
