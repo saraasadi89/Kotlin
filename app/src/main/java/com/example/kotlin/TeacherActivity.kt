@@ -6,7 +6,7 @@ import android.os.Bundle
 import com.example.kotlin.databinding.ActivityLoginBinding
 import com.example.kotlin.databinding.ActivityTeacherBinding
 
-class Teacher : AppCompatActivity() {
+class TeacherActivity : AppCompatActivity() {
     private lateinit var bind: ActivityTeacherBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

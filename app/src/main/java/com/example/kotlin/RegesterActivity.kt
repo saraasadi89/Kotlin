@@ -5,22 +5,19 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.example.kotlin.databinding.ActivityLoginBinding
+import com.example.kotlin.databinding.ActivityRegesterBinding
 import com.example.kotlin.model.Student
 import com.tumblr.remember.Remember
 
-class LoginActivity : AppCompatActivity() {
-    private lateinit var bind: ActivityLoginBinding
+class RegesterActivity : AppCompatActivity() {
+    private lateinit var bind: ActivityRegesterBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         val studentDao = MyDatabase.getDatabase(this).studentDao
 
 
-        //inits remember
-        Remember.init(applicationContext, "com.example.kotlin")
-
-
-        bind = ActivityLoginBinding.inflate(layoutInflater)
+        bind = ActivityRegesterBinding.inflate(layoutInflater)
         setContentView(bind.root)
 
         bind.editText1.setText("User name")
@@ -39,24 +36,22 @@ class LoginActivity : AppCompatActivity() {
         bind.textButton2.setOnClickListener {
             val username = bind.editText1.text.toString()
             val pass = bind.editText2.text.toString()
+            val student = Student(userName = username, password = pass)
 
-            val student=studentDao.login(username,pass)
+            val studentExists = studentDao.userExists(username)
 
-////TODO unfawear
 
-            if (student!=null) {
-                intent = Intent(applicationContext, StudentActivity::class.java)
-                startActivity(intent)
-            }else
-                Toast.makeText(this, "wrong user or pass", Toast.LENGTH_SHORT).show()
+            if (studentExists) {
+                Toast.makeText(this, "username is taken", Toast.LENGTH_SHORT).show()
+            } else {
+                val newStudent = studentDao.register(student)
+                finish()
+            }
 
         }
-        bind.btnSwitch.setOnClickListener{
-            intent = Intent(applicationContext, RegesterActivity::class.java)
-            startActivity(intent)
+        bind.btnSwitch.setOnClickListener {
+            finish()
         }
-
 
     }
-
 }
