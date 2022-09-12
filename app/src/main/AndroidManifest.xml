@@ -14,7 +14,7 @@
         android:theme="@style/Theme.Kotlin"
         tools:targetApi="31">
         <activity
-            android:name=".RegesterActivity"
+            android:name=".RegisterActivity"
             android:exported="false" />
         <activity
             android:name=".StartQuizActivity"

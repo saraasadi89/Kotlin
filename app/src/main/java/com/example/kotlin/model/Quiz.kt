@@ -7,7 +7,9 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "Quiz")
 data class Quiz(
     @PrimaryKey(autoGenerate = true)
-    val id :Int?=null,
+
+    //zamani ke quiz update mishavad baraye inke betavanim megdar id ra be quiz update shode bedahim bayad var bashad
+    var id :Int?=null,
     val question: String,
     @ColumnInfo(name="option1")
     val op1: String,

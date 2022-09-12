@@ -16,10 +16,14 @@ class LoginActivity : AppCompatActivity() {
     lateinit var studentDao: StudentDao
     lateinit var teacherDao: TeacherDao
 
-    val rememberId = "id"
-    val rememberType = "type"
+    companion object {
+        val rememberId = "id"
+        val rememberType = "type"
+    }
 
-    enum class Type {
+
+
+     enum class Type {
         STUDENT, TEACHER
     }
 
@@ -29,7 +33,7 @@ class LoginActivity : AppCompatActivity() {
 
         //inits remember
         Remember.init(applicationContext, "com.example.kotlin")
-        gotoActivityIfLogged()
+
 
 
         bind = ActivityLoginBinding.inflate(layoutInflater)
@@ -43,14 +47,14 @@ class LoginActivity : AppCompatActivity() {
         teacherButton()
 
         bind.btnSwitch.setOnClickListener {
-            intent = Intent(applicationContext, RegesterActivity::class.java)
+            intent = Intent(applicationContext, RegisterActivity::class.java)
             startActivity(intent)
         }
 
 
     }
 
-     fun gotoActivityIfLogged() {
+    fun gotoActivityIfLogged() {
         val id = Remember.getInt(rememberId, -1)
         if (id != -1) {
             val type = Remember.getString(rememberType, "")
@@ -102,11 +106,16 @@ class LoginActivity : AppCompatActivity() {
                 intent = Intent(applicationContext, TeacherActivity::class.java)
                 startActivity(intent)
                 finish()
-            }
-            else {
+            } else {
                 Toast.makeText(this, "wrong user or pass", Toast.LENGTH_SHORT).show()
             }
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        gotoActivityIfLogged()
+
     }
 
 }

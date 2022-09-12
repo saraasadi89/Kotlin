@@ -7,23 +7,25 @@ import android.widget.Toast
 import com.example.kotlin.Dao.StudentDao
 import com.example.kotlin.Dao.TeacherDao
 import com.example.kotlin.databinding.ActivityLoginBinding
-import com.example.kotlin.databinding.ActivityRegesterBinding
+import com.example.kotlin.databinding.ActivityRegisterBinding
 import com.example.kotlin.model.Student
 import com.example.kotlin.model.Teacher
 import com.tumblr.remember.Remember
 
-class RegesterActivity : AppCompatActivity() {
-    private lateinit var bind: ActivityRegesterBinding
+class RegisterActivity : AppCompatActivity() {
+    private lateinit var bind: ActivityRegisterBinding
 
     lateinit var studentDao: StudentDao
     lateinit var teacherDao: TeacherDao
+    val teacherregister = "teacherregister"
+    val studentregister = "studentregister"
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
 
-        bind = ActivityRegesterBinding.inflate(layoutInflater)
+        bind = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(bind.root)
 
         studentDao = MyDatabase.getDatabase(this).studentDao
@@ -50,7 +52,18 @@ class RegesterActivity : AppCompatActivity() {
                 Toast.makeText(this, "username is taken", Toast.LENGTH_SHORT).show()
             } else {
                 teacherDao.register(teacher)
+
+                //Login after register
+                var teacherRegister = teacherDao.login(username, pass)
+                var teacherId = teacherRegister.id
+                Remember.putInt(LoginActivity.rememberId, teacherId!!)
+                Remember.putString(
+                    LoginActivity.rememberType,
+                    LoginActivity.Type.TEACHER.toString()
+                )
+
                 finish()
+
             }
         }
     }
@@ -67,10 +80,24 @@ class RegesterActivity : AppCompatActivity() {
             if (studentExists) {
                 Toast.makeText(this, "username is taken", Toast.LENGTH_SHORT).show()
             } else {
-                val newStudent = studentDao.register(student)
+                studentDao.register(student)
+
+                //Login after register
+                var studentregister = studentDao.login(username, pass)
+                var studentId = studentregister.id
+                Remember.putInt(LoginActivity.rememberId, studentId!!)
+                Remember.putString(
+                    LoginActivity.rememberType,
+                    LoginActivity.Type.STUDENT.toString()
+                )
+
                 finish()
+
+
             }
 
         }
     }
+
+
 }

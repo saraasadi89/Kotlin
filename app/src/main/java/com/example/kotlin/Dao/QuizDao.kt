@@ -20,4 +20,10 @@ interface QuizDao {
 
     @Query("DELETE FROM Quiz")
     fun deleteAll()
+
+    @Query("SELECT question FROM Quiz")
+    fun getQuestion ():List<String>
+
+    @Query("SELECT * FROM Quiz WHERE id= :id")
+    fun getQuizById(id:Int):Quiz
 }

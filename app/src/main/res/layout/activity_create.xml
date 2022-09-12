@@ -7,7 +7,7 @@
     tools:context=".CreateActivity">
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/et_qastion"
+        android:id="@+id/qastion"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         counterEnabled="true"
         counterMaxLength="1000"
@@ -19,6 +19,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline7">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etx_question"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:inputType="textImeMultiLine" />
@@ -26,18 +27,19 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/et_answer1"
+        android:id="@+id/answer1"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         counterEnabled="true"
         counterMaxLength="1000"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="question"
-        app:layout_constraintEnd_toStartOf="@+id/radioGroup"
+        app:layout_constraintEnd_toStartOf="@+id/rg_answer"
         app:layout_constraintStart_toStartOf="@+id/guideline8"
-        app:layout_constraintTop_toBottomOf="@+id/et_qastion">
+        app:layout_constraintTop_toBottomOf="@+id/qastion">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etx_answer1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:inputType="textImeMultiLine" />
@@ -45,18 +47,19 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/et_answer2"
+        android:id="@+id/answer2"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         counterEnabled="true"
         counterMaxLength="1000"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="question"
-        app:layout_constraintEnd_toStartOf="@+id/radioGroup"
+        app:layout_constraintEnd_toStartOf="@+id/rg_answer"
         app:layout_constraintStart_toStartOf="@+id/guideline8"
-        app:layout_constraintTop_toBottomOf="@+id/et_answer1">
+        app:layout_constraintTop_toBottomOf="@+id/answer1">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etx_answer2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:inputType="textImeMultiLine" />
@@ -64,18 +67,19 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/et_answer3"
+        android:id="@+id/answer3"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         counterEnabled="true"
         counterMaxLength="1000"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="question"
-        app:layout_constraintEnd_toEndOf="@+id/et_answer2"
+        app:layout_constraintEnd_toEndOf="@+id/answer2"
         app:layout_constraintStart_toStartOf="@+id/guideline8"
-        app:layout_constraintTop_toBottomOf="@+id/et_answer2">
+        app:layout_constraintTop_toBottomOf="@+id/answer2">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etx_answer3"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:inputType="textImeMultiLine" />
@@ -83,18 +87,19 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/et_answer4"
+        android:id="@+id/answer4"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         counterEnabled="true"
         counterMaxLength="1000"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="question"
-        app:layout_constraintEnd_toEndOf="@+id/et_answer2"
+        app:layout_constraintEnd_toEndOf="@+id/answer2"
         app:layout_constraintStart_toStartOf="@+id/guideline8"
-        app:layout_constraintTop_toBottomOf="@+id/et_answer3">
+        app:layout_constraintTop_toBottomOf="@+id/answer3">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etx_answer4"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:inputType="textImeMultiLine" />
@@ -123,40 +128,40 @@
         app:layout_constraintGuide_end="16dp" />
 
     <RadioGroup
-        android:id="@+id/radioGroup"
+        android:id="@+id/rg_answer"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="@+id/et_answer4"
+        app:layout_constraintBottom_toBottomOf="@+id/answer4"
         app:layout_constraintEnd_toStartOf="@+id/guideline9"
-        app:layout_constraintTop_toBottomOf="@+id/et_qastion">
+        app:layout_constraintTop_toBottomOf="@+id/qastion">
 
         <Space
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
         <RadioButton
-            android:id="@+id/radioButton"
+            android:id="@+id/rb1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="RadioButton" />
 
         <RadioButton
-            android:id="@+id/radioButton2"
+            android:id="@+id/rb2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:text="RadioButton" />
 
         <RadioButton
-            android:id="@+id/radioButton3"
+            android:id="@+id/rb3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="RadioButton" />
 
         <RadioButton
-            android:id="@+id/radioButton4"
+            android:id="@+id/rb4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -164,7 +169,7 @@
     </RadioGroup>
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btn_create"
         style="@style/Widget.MaterialComponents.Button.TextButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
